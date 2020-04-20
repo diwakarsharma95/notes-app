@@ -6,9 +6,7 @@ getNotes = () => 'My notes...'
 const addNotes = (title, body) => {
     const notes = loadNotes()
     //to check the duplicacy of title
-    const duplicateNotes = notes.filter(function(individualNote){
-        return individualNote.title === title
-    })
+    const duplicateNotes = notes.filter( individualNote => individualNote.title === title)
     if(duplicateNotes.length === 0){
         notes.push({
             title: title,
@@ -22,9 +20,7 @@ const addNotes = (title, body) => {
 }
 const removeNotes = title => {
     const notes = loadNotes()
-    const notesToKeep = notes.filter(function(individualNote){
-        return individualNote.title !== title
-    })
+    const notesToKeep = notes.filter(individualNote => individualNote.title !== title)
     saveNotes(notesToKeep)
     if(notesToKeep.length === notes.length){
         console.log(chalk.red.inverse.bold("No note found!"))
