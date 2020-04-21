@@ -21,6 +21,7 @@ const readNotes = (title) => {
     const findNote = notes.find((individualNote) => individualNote.title === title)
     if(findNote){
         console.log(chalk.blue.bold(`${findNote.title}`))
+        debugger
         console.log(findNote.body)
     }else{
         console.log(chalk.bold.red("No Note Found"))
